@@ -1,0 +1,26 @@
+[project]
+name = "chisco-eeg2text"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "007", email = "007lookworld@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.11.0",
+]
+
+[project.scripts]
+chisco-eeg2text = "chisco_eeg2text:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
